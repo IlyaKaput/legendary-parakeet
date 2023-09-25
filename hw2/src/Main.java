@@ -1,7 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         Ball ball = new Ball(1);
-        Car car = new Car("red", 100, 120, "Kopeyka", 8);
+        Car car = new Car.Builder(120, 8)
+                .mileage(0)
+                .fuel(100)
+                .colour("Black")
+                .model("Kopeyka")
+                .build();
         Contact contact = new Contact("Ya ne ponyal, to li ya delay woobshe", "realnoNePonyal@gmail.com");
         IntHolder intHolder = new IntHolder(10);
         Parrot parrot = new Parrot("Kesha", 100, 1, "Ignat", "Arstotska", false);
