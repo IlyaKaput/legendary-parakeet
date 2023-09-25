@@ -38,5 +38,8 @@ public class Main {
         colourPyramid.print();
         cylinder.print();
         ball.print();
+        System.out.println(Task1.replace("11?11?", "1?", "!2"));
+        System.out.println(Task1.format("1", 2, "3"));
+        System.out.println(Task1.isPalindrome("123321"));
     }
 }
