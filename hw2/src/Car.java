@@ -1,7 +1,6 @@
 public class Car {
     private String colour = "black";
     private int fuel;
-    private final Engine engine;
     private int maxFuel=0;
     private String model="Lada";
     private Engine engine;
