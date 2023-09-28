@@ -18,7 +18,7 @@ public class Homework1 {
                 {5, 10, 11, 8},
                 {9, 6, 7, 12},
                 {4, 15, 14, 1}}));
-        System.out.println(Arrays.toString(reverse(new int[]{1, 2, 3})));
+        System.out.println(Arrays.toString(reverse(new int[]{1, 2, 3, 5})));
         System.out.println(Arrays.toString(sort(new int[]{2, 1, 45, 34, 12, 2})));
         System.out.println(Arrays.toString(removeExtra(new int[]{2, 1, 45, 2, 34, 1, 12, 2}, 2)));
     }
@@ -33,6 +33,8 @@ public class Homework1 {
 
     // task 2
     static int normalize(int angle) {
+        angle %= 360;
+        angle += 360;
         angle %= 360;
         return angle;
     }
@@ -52,8 +54,8 @@ public class Homework1 {
 
     // task 4
     static int fact(int n) {
-        if (n == 1) {
-            return n;
+        if (n == 1 || n == 0) {
+            return 1;
         }else{
             int m = n * fact(n - 1);
             return m;
@@ -63,7 +65,7 @@ public class Homework1 {
 
     // task 5
     static BigInteger fact(BigInteger n) {
-        if (n.compareTo(BigInteger.valueOf(1)) == 0){
+        if (n.compareTo(BigInteger.ONE) == 0 || n.compareTo(BigInteger.ZERO) == 0){
             return n;
         }else{
             return n.multiply(fact(n.subtract(BigInteger.valueOf(1))));
@@ -84,6 +86,9 @@ public class Homework1 {
     // task 7
     static double average(int... nums) {
         int len = nums.length;
+        if(len==0){
+            return 0;
+        }
         double sum = 0;
         for(int i = 0; i < len; ++i){
             sum += nums[i];
@@ -136,11 +141,13 @@ public class Homework1 {
     // task 9
     static int[] reverse(int[] arr) {
         int l = arr.length;
-        int[] res = new int[l];
-        for(int i = 0; i < l; ++i){
-            res[i] = arr[l - i - 1];
+        int mid = (l+1)/2;
+        for(int i = 0; i < mid; ++i){
+            int temp = arr[i];
+            arr[i] = arr[l-i-1];
+            arr[l-i-1] = temp;
         }
-        return res;
+        return arr;
     }
 
 
@@ -167,13 +174,13 @@ public class Homework1 {
     static int[] removeExtra(int[] arr, int n) {
         int len = arr.length;
         int k = 0;
-        int m = 0;
         for(int i = 0; i < len; ++i){
             if(arr[i] != n){
                 ++k;
             }
         }
         int[] res = new int[k];
+        int m = 0;
         for(int i = 0; i < len; ++i){
             if(arr[i]!=n){
                 res[m]=arr[i];
