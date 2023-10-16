@@ -4,7 +4,7 @@ public class Cat extends Pet{
         super();
         this.food = Food.EXPENSIVE;
     }
-    public Cat(String name, int age, int weight, String owner, Food food){
+    public Cat(String name, int age, int weight, String owner, Food food) {
         this.food = food;
         this.age= age;
         this.name = name;
@@ -12,14 +12,14 @@ public class Cat extends Pet{
         this.owner = owner;
 
     }
-    public void walk(){
+    public void walk() {
         System.out.println("I've walked with my owner. He stinks");
     }
-    public void walk(String name){
+    public void walk(String name) {
         System.out.println("I've walked with " + name + ". He stinks");
     }
     @Override
-    public void say(){
+    public void say() {
         System.out.println("I hate Mondays");
     }
 }
