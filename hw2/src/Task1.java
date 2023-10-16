@@ -1,10 +1,10 @@
 public class Task1 {
     static boolean equals(String s, String t) {
-        if(s.length() != t.length()){
+        if(s.length() != t.length()) {
             return false;
         }
-        for(int i = 0; i < s.length(); ++i){
-            if(s.toLowerCase().charAt(i) != t.toLowerCase().charAt(i)){
+        for(int i = 0; i < s.length(); ++i) {
+            if(s.toLowerCase().charAt(i) != t.toLowerCase().charAt(i)) {
                 return false;
             }
         }
@@ -29,8 +29,8 @@ public class Task1 {
         return("Студент " + surname + " получил " + mark + " по " + subject);
     }
     static boolean isPalindrome(String str) {
-        for(int i = 0; i < str.length(); ++i){
-            if(str.charAt(i)!=str.charAt(str.length()-i-1)){
+        for(int i = 0; i < str.length(); ++i) {
+            if(str.charAt(i)!=str.charAt(str.length()-i-1)) {
                 return false;
             }
         }
